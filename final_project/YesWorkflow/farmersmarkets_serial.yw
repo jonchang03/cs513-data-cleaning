@@ -1,0 +1,301 @@
+#@begin Linear_OR #@desc Linear OpenRefine Workflow
+#@param col-name:Season3Date
+#@param col-name:Facebook
+#@param col-name:Youtube
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'')
+#@param expression:value.toUppercase()
+#@param col-name:longitude
+#@param col-name:updateTime
+#@param col-name:Twitter
+#@param expression:grel:value.toDate('d/M/y_H:m:s')
+#@param col-name:city
+#@param col-name:street
+#@param col-name:State
+#@param col-name:Season2Time
+#@param col-name:Season2Date
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'').replace("&",_'AND')
+#@param oldColumnName:x
+#@param col-name:latitude
+#@param expression:value.replace("-","")
+#@param newColumnName:longitude
+#@param col-name:OtherMedia
+#@param col-name:Season1Time
+#@param col-name:Season4Date
+#@param col-name:Season3Time
+#@param col-name:Organic
+#@param expression:value.toNumber()
+#@param col-name:Season1Date
+#@param col-name:Location
+#@param expression:value.trim()
+#@param expression:value.replace(/\\s+/,'_')
+#@param oldColumnName:y
+#@param col-name:Season4Time
+#@param col-name:Website
+#@param newColumnName:latitude
+#@param col-name:County
+#@param col-name:MarketName
+#@in table0
+#@out table47
+#@begin core/text-transform0#@desc Text transform on cells in column MarketName using expression value.trim()
+#@param col-name:MarketName
+#@param expression:value.trim()
+#@in table0
+#@out table1
+#@end core/text-transform0
+#@begin core/text-transform1#@desc Text transform on cells in column MarketName using expression value.replace(/\\s+/,' ')
+#@param col-name:MarketName
+#@param expression:value.replace(/\\s+/,'_')
+#@in table1
+#@out table2
+#@end core/text-transform1
+#@begin core/mass-edit0#@desc Mass edit cells in column MarketName
+#@param col-name:MarketName
+#@in table2
+#@out table3
+#@end core/mass-edit0
+#@begin core/column-removal0#@desc Remove column Website
+#@param col-name:Website
+#@in table3
+#@out table4
+#@end core/column-removal0
+#@begin core/column-removal1#@desc Remove column Facebook
+#@param col-name:Facebook
+#@in table4
+#@out table5
+#@end core/column-removal1
+#@begin core/column-removal2#@desc Remove column Twitter
+#@param col-name:Twitter
+#@in table5
+#@out table6
+#@end core/column-removal2
+#@begin core/column-removal3#@desc Remove column Youtube
+#@param col-name:Youtube
+#@in table6
+#@out table7
+#@end core/column-removal3
+#@begin core/column-removal4#@desc Remove column OtherMedia
+#@param col-name:OtherMedia
+#@in table7
+#@out table8
+#@end core/column-removal4
+#@begin core/column-removal5#@desc Remove column Season2Date
+#@param col-name:Season2Date
+#@in table8
+#@out table9
+#@end core/column-removal5
+#@begin core/column-removal6#@desc Remove column Season2Time
+#@param col-name:Season2Time
+#@in table9
+#@out table10
+#@end core/column-removal6
+#@begin core/column-removal7#@desc Remove column Season3Date
+#@param col-name:Season3Date
+#@in table10
+#@out table11
+#@end core/column-removal7
+#@begin core/column-removal8#@desc Remove column Season3Time
+#@param col-name:Season3Time
+#@in table11
+#@out table12
+#@end core/column-removal8
+#@begin core/column-removal9#@desc Remove column Season4Date
+#@param col-name:Season4Date
+#@in table12
+#@out table13
+#@end core/column-removal9
+#@begin core/column-removal10#@desc Remove column Season4Time
+#@param col-name:Season4Time
+#@in table13
+#@out table14
+#@end core/column-removal10
+#@begin core/text-transform2#@desc Text transform on cells in column street using expression grel:value.replace(/[%@#!.?;:,\"']/, '').replace(/-\\[\\]\\(\\)/, '').replace(\"&\", 'AND')
+#@param col-name:street
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'').replace("&",_'AND')
+#@in table14
+#@out table15
+#@end core/text-transform2
+#@begin core/text-transform3#@desc Text transform on cells in column street using expression value.trim()
+#@param col-name:street
+#@param expression:value.trim()
+#@in table15
+#@out table16
+#@end core/text-transform3
+#@begin core/text-transform4#@desc Text transform on cells in column street using expression value.replace(/\\s+/,' ')
+#@param col-name:street
+#@param expression:value.replace(/\\s+/,'_')
+#@in table16
+#@out table17
+#@end core/text-transform4
+#@begin core/text-transform5#@desc Text transform on cells in column street using expression value.toUppercase()
+#@param col-name:street
+#@param expression:value.toUppercase()
+#@in table17
+#@out table18
+#@end core/text-transform5
+#@begin core/mass-edit1#@desc Mass edit cells in column street
+#@param col-name:street
+#@in table18
+#@out table19
+#@end core/mass-edit1
+#@begin core/mass-edit2#@desc Mass edit cells in column street
+#@param col-name:street
+#@in table19
+#@out table20
+#@end core/mass-edit2
+#@begin core/text-transform6#@desc Text transform on cells in column city using expression grel:value.replace(/[%@#!.?;:,\"']/, '').replace(/-\\[\\]\\(\\)/, '').replace(\"&\", 'AND')
+#@param col-name:city
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'').replace("&",_'AND')
+#@in table20
+#@out table21
+#@end core/text-transform6
+#@begin core/text-transform7#@desc Text transform on cells in column city using expression value.trim()
+#@param col-name:city
+#@param expression:value.trim()
+#@in table21
+#@out table22
+#@end core/text-transform7
+#@begin core/text-transform8#@desc Text transform on cells in column city using expression value.replace(/\\s+/,' ')
+#@param col-name:city
+#@param expression:value.replace(/\\s+/,'_')
+#@in table22
+#@out table23
+#@end core/text-transform8
+#@begin core/text-transform9#@desc Text transform on cells in column city using expression value.toUppercase()
+#@param col-name:city
+#@param expression:value.toUppercase()
+#@in table23
+#@out table24
+#@end core/text-transform9
+#@begin core/mass-edit3#@desc Mass edit cells in column city
+#@param col-name:city
+#@in table24
+#@out table25
+#@end core/mass-edit3
+#@begin core/text-transform10#@desc Text transform on cells in column city using expression value.replace(\"-\",\"\")
+#@param col-name:city
+#@param expression:value.replace("-","")
+#@in table25
+#@out table26
+#@end core/text-transform10
+#@begin core/mass-edit4#@desc Mass edit cells in column city
+#@param col-name:city
+#@in table26
+#@out table27
+#@end core/mass-edit4
+#@begin core/text-transform11#@desc Text transform on cells in column County using expression grel:value.replace(/[%@#!.?;:,\"']/, '').replace(/-\\[\\]\\(\\)/, '').replace(\"&\", 'AND')
+#@param col-name:County
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'').replace("&",_'AND')
+#@in table27
+#@out table28
+#@end core/text-transform11
+#@begin core/text-transform12#@desc Text transform on cells in column County using expression value.trim()
+#@param col-name:County
+#@param expression:value.trim()
+#@in table28
+#@out table29
+#@end core/text-transform12
+#@begin core/text-transform13#@desc Text transform on cells in column County using expression value.replace(/\\s+/,' ')
+#@param col-name:County
+#@param expression:value.replace(/\\s+/,'_')
+#@in table29
+#@out table30
+#@end core/text-transform13
+#@begin core/text-transform14#@desc Text transform on cells in column County using expression value.toUppercase()
+#@param col-name:County
+#@param expression:value.toUppercase()
+#@in table30
+#@out table31
+#@end core/text-transform14
+#@begin core/mass-edit5#@desc Mass edit cells in column County
+#@param col-name:County
+#@in table31
+#@out table32
+#@end core/mass-edit5
+#@begin core/text-transform15#@desc Text transform on cells in column State using expression grel:value.replace(/[%@#!.?;:,\"']/, '').replace(/-\\[\\]\\(\\)/, '')
+#@param col-name:State
+#@param expression:grel:value.replace(/[%@#!.?;:,"']/,_'').replace(/-\\[\\]\\(\\)/,_'')
+#@in table32
+#@out table33
+#@end core/text-transform15
+#@begin core/text-transform16#@desc Text transform on cells in column State using expression value.trim()
+#@param col-name:State
+#@param expression:value.trim()
+#@in table33
+#@out table34
+#@end core/text-transform16
+#@begin core/text-transform17#@desc Text transform on cells in column State using expression value.replace(/\\s+/,' ')
+#@param col-name:State
+#@param expression:value.replace(/\\s+/,'_')
+#@in table34
+#@out table35
+#@end core/text-transform17
+#@begin core/text-transform18#@desc Text transform on cells in column State using expression value.toUppercase()
+#@param col-name:State
+#@param expression:value.toUppercase()
+#@in table35
+#@out table36
+#@end core/text-transform18
+#@begin core/column-removal11#@desc Remove column Season1Date
+#@param col-name:Season1Date
+#@in table36
+#@out table37
+#@end core/column-removal11
+#@begin core/column-removal12#@desc Remove column Season1Time
+#@param col-name:Season1Time
+#@in table37
+#@out table38
+#@end core/column-removal12
+#@begin core/column-rename0#@desc Rename column x to latitude
+#@param oldColumnName:x
+#@param newColumnName:latitude
+#@in table38
+#@out table39
+#@end core/column-rename0
+#@begin core/column-rename1#@desc Rename column y to longitude
+#@param oldColumnName:y
+#@param newColumnName:longitude
+#@in table39
+#@out table40
+#@end core/column-rename1
+#@begin core/text-transform19#@desc Text transform on cells in column latitude using expression value.toNumber()
+#@param col-name:latitude
+#@param expression:value.toNumber()
+#@in table40
+#@out table41
+#@end core/text-transform19
+#@begin core/text-transform20#@desc Text transform on cells in column longitude using expression value.toNumber()
+#@param col-name:longitude
+#@param expression:value.toNumber()
+#@in table41
+#@out table42
+#@end core/text-transform20
+#@begin core/column-removal13#@desc Remove column Location
+#@param col-name:Location
+#@in table42
+#@out table43
+#@end core/column-removal13
+#@begin core/text-transform21#@desc Text transform on cells in column Organic using expression value.replace(\"-\",\"\")
+#@param col-name:Organic
+#@param expression:value.replace("-","")
+#@in table43
+#@out table44
+#@end core/text-transform21
+#@begin core/text-transform22#@desc Text transform on cells in column updateTime using expression value.trim()
+#@param col-name:updateTime
+#@param expression:value.trim()
+#@in table44
+#@out table45
+#@end core/text-transform22
+#@begin core/text-transform23#@desc Text transform on cells in column updateTime using expression value.replace(/\\s+/,' ')
+#@param col-name:updateTime
+#@param expression:value.replace(/\\s+/,'_')
+#@in table45
+#@out table46
+#@end core/text-transform23
+#@begin core/text-transform24#@desc Text transform on cells in column updateTime using expression grel:value.toDate('d/M/y H:m:s')
+#@param col-name:updateTime
+#@param expression:grel:value.toDate('d/M/y_H:m:s')
+#@in table46
+#@out table47
+#@end core/text-transform24
+#@end Linear_OR
