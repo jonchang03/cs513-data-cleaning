@@ -1,0 +1,66 @@
+sqlite3 ./farmersmarkets.db
+
+.header on
+.mode csv
+
+CREATE TABLE location(
+	"FMID"			INT PRIMARY KEY NOT NULL,
+	"MarketName" 	TEXT,
+	"street"		TEXT,
+	"City"			TEXT,
+	"County"		TEXT,
+	"State"			TEXT,
+	"zip"			TEXT,
+	"latitude"		REAL,
+	"longitude"		REAL,
+	"updateTime"	DATETIME
+);
+.import /Users/jchang16/UIUC/cs513-data-cleaning/final_project/CleanedData/farmersmarkets_location.csv location
+
+CREATE TABLE payments(
+	"FMID"			INT PRIMARY KEY NOT NULL,
+	"Credit"		CHAR(1),
+	"WIC"			CHAR(1),
+	"WICcash"		CHAR(1),
+	"SFMNP"			CHAR(1),
+	"SNAP"			CHAR(1)
+);
+.import /Users/jchang16/UIUC/cs513-data-cleaning/final_project/CleanedData/farmersmarkets_payments.csv payments
+
+CREATE TABLE products(
+	"FMID"			INT PRIMARY KEY NOT NULL,
+	"Organic"		CHAR(1),
+	"Bakedgoods"	CHAR(1),
+	"Cheese"		CHAR(1),
+	"Crafts"		CHAR(1),
+	"Flowers"		CHAR(1),
+	"Eggs"			CHAR(1),
+	"Seafood"		CHAR(1),
+	"Herbs"			CHAR(1),
+	"Vegetables"	CHAR(1),
+	"Honey"			CHAR(1),
+	"Jams"			CHAR(1),
+	"Maple"			CHAR(1),
+	"Meat"			CHAR(1),
+	"Nursery"		CHAR(1),
+	"Nuts"			CHAR(1),
+	"Plants"		CHAR(1),
+	"Poultry"		CHAR(1),
+	"Prepared"		CHAR(1),
+	"Soap"			CHAR(1),
+	"Trees"			CHAR(1),
+	"Wine"			CHAR(1),
+	"Coffee"		CHAR(1),
+	"Beans"			CHAR(1),
+	"Fruits"		CHAR(1),
+	"Grains"		CHAR(1),
+	"Juices"		CHAR(1),
+	"Mushrooms"		CHAR(1),
+	"PetFood"		CHAR(1),
+	"Tofu"			CHAR(1),
+	"WildHarvested"	CHAR(1)
+);
+.import /Users/jchang16/UIUC/cs513-data-cleaning/final_project/CleanedData/farmersmarkets_products.csv products
+
+.output ./farmersmarkets.sql
+.dump
